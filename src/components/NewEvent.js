@@ -10,6 +10,7 @@ class NewEvent extends React.Component {
   state = {
     name: "",
     description: "",
+    category: "",
     date_from: "",
     date_until: "",
     time_from: "",
@@ -53,11 +54,15 @@ class NewEvent extends React.Component {
       }}>
       <Form.Field>
         <label>Name</label>
-        <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+        <input required type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>Description</label>
-        <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+        <input required type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+      </Form.Field>
+      <Form.Field>
+        <label>Type</label>
+        <input required type="text" name="category" value={this.state.category} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>From</label>
@@ -69,7 +74,7 @@ class NewEvent extends React.Component {
         <input required type="date" name="date_until" value={this.state.date_until} onChange={this.handleChange}/>
         <input required type="time" name="time_until" value={this.state.time_until}  onChange={this.handleChange}/>
       </Form.Field>
-      <Dropdown name="area_id" placeholder='Select Area' fluid selection options={areaOptions}  onChange={this.handleSelect}/>
+      <Dropdown required name="area_id" placeholder='Select Area' fluid selection options={areaOptions}  onChange={this.handleSelect}/>
       <Button type='submit'>Add Event</Button>
       </Form>
     </Container>

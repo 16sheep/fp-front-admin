@@ -8,7 +8,7 @@ import FestivalDetails from './components/FestivalDetails'
 import FestivalForm from './components/FestivalForm'
 import FestivalList from './components/FestivalList'
 import { connect } from 'react-redux'
-import { Button, Container, Grid} from 'semantic-ui-react'
+import { Button, Container, Grid, Header} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import './App.css';
 
@@ -16,6 +16,14 @@ class App extends Component {
 
   login = (username, password) => {
     loginUser(username, password).then(this.postAuth)
+  }
+
+  currentFestival = () => {
+    console.log("PROPS", this.props)
+    let id = parseInt(this.props.match.params.id)
+    let fest = this.props.festivals.find(f => f.id === id)
+    console.log("UR FEST", fest);
+    return fest
   }
 
   componentDidMount() {
@@ -43,7 +51,7 @@ class App extends Component {
                   <Grid.Column width={4}>
                     <Authbox />
                   </Grid.Column>
-                  <Grid.Column width={9}>
+                  <Grid.Column width={12}>
                     <About />
                   </Grid.Column>
                 </Grid>
@@ -75,8 +83,10 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
+  console.log(state);
   return {
-    current_user: state.session.current_user
+    current_user: state.session.current_user,
+    festivals: state.festival.festivals
   }
 }
 

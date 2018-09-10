@@ -49,34 +49,34 @@ class Edit extends React.Component {
       <Form onSubmit={(e, state)=>this.props.editFestival(e, this.state, this.props.current_user, {id:this.currentFestival().id})}>
       <Form.Field>
         <label>Name</label>
-        <input type="text" name="name" value={this.state.name} placeholder={this.currentFestival().name} onChange={this.handleChange}/>
+        <input required type="text" name="name" value={this.state.name} placeholder={this.currentFestival().name} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>Secret</label>
-        <input type="text" name="secret" value={this.state.secret} placeholder={this.currentFestival().secret} onChange={this.handleChange}/>
+        <input required type="text" name="secret" value={this.state.secret} placeholder={this.currentFestival().secret} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>Location</label>
-        <input type="text" name="location" value={this.state.location} placeholder={this.currentFestival().location} onChange={this.handleChange}/>
+        <input required type="text" name="location" value={this.state.location} placeholder={this.currentFestival().location} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>Logo image link</label>
-        <input type="text" name="logo_img" value={this.state.logo_img} placeholder={this.currentFestival().logo_img} onChange={this.handleChange}/>
+        <input required type="text" name="logo_img" value={this.state.logo_img} placeholder={this.currentFestival().logo_img} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>Map image link</label>
-        <input type="text" name="map_img" value={this.state.map_img} placeholder={this.currentFestival().map_img} onChange={this.handleChange}/>
+        <input required type="text" name="map_img" value={this.state.map_img} placeholder={this.currentFestival().map_img} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>From</label>
-        <input type="date" name="date_from" value={this.state.date_from} placeholder={this.currentFestival().date_from} onChange={this.handleChange}/>
+        <input required type="date" name="date_from" value={this.state.date_from} placeholder={this.currentFestival().date_from} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>To</label>
-        <input type="date" name="date_until" value={this.state.date_until} placeholder={this.currentFestival().date_until} onChange={this.handleChange}/>
+        <input required type="date" name="date_until" value={this.state.date_until} placeholder={this.currentFestival().date_until} onChange={this.handleChange}/>
       </Form.Field>
       <Button.Group>
-      <Button type='submit'>Update</Button>
+      <Button required type='submit'>Update</Button>
       <Link to="/" className="button">
         <Button onClick={() => {
           this.props.deleteFestival(this.props.current_user,{id:this.currentFestival().id} )}}>

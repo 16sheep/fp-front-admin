@@ -11,6 +11,7 @@ class Map extends React.Component {
   state = {
     name: "",
     description: "",
+    icon: "",
     selectedArea: "",
     addArea: false,
     updateArea: false
@@ -96,6 +97,10 @@ class Map extends React.Component {
             <label>Description</label>
             <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
           </Form.Field>
+          <Form.Field>
+            <label>Icon</label>
+            <input required type="text" name="icon" value={this.state.icon} onChange={this.handleChange}/>
+          </Form.Field>
           <Button.Group>
             <Button type='submit'>Update Area</Button>
             <Button onClick={(e) => {
@@ -131,6 +136,10 @@ class Map extends React.Component {
               <Form.Field>
                 <label>Description</label>
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+              </Form.Field>
+              <Form.Field>
+                <label>Icon</label>
+                <input required type="text" name="icon" value={this.state.icon} onChange={this.handleChange}/>
               </Form.Field>
               <Button.Group>
                 <Button type='submit'>Add Area</Button>

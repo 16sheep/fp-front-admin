@@ -41,6 +41,8 @@ class EditEvent extends React.Component {
     return event
   }
 
+  
+
   componentDidMount () {
     let from = this.currentEvent().start.split(" ")
     let until = this.currentEvent().end.split(" ")
@@ -48,6 +50,7 @@ class EditEvent extends React.Component {
     this.setState({
       name: this.currentEvent().name,
       description: this.currentEvent().description,
+      category:this.currentEvent().category,
       area_id: this.currentEvent().area_id,
       time_from: from[1],
       time_until: until[1],
@@ -67,11 +70,15 @@ class EditEvent extends React.Component {
       <Form onSubmit={(e, state)=>this.props.editEvent(e, this.state, this.props.current_user, this.currentFestival().id, this.currentEvent().id)}>
       <Form.Field>
         <label>Name</label>
-        <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+        <input required type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>Description</label>
-        <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+        <input required type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+      </Form.Field>
+      <Form.Field>
+        <label>Type</label>
+        <input required type="text" name="category" value={this.state.category} onChange={this.handleChange}/>
       </Form.Field>
       <Form.Field>
         <label>From</label>
@@ -83,7 +90,7 @@ class EditEvent extends React.Component {
         <input required type="date" name="date_until" value={this.state.date_until} onChange={this.handleChange}/>
         <input required type="time" name="time_until" value={this.state.time_until}  onChange={this.handleChange}/>
       </Form.Field>
-      <Dropdown name="area_id" placeholder='Select Area' fluid selection options={areaOptions}  onChange={this.handleSelect}/>
+      <Dropdown required name="area_id" placeholder='Select Area' fluid selection options={areaOptions}  onChange={this.handleSelect}/>
       <Button.Group>
       <Button type='submit'>Update Event</Button>
       <Link to={`/festivals/${this.currentFestival().id}`} className="button">

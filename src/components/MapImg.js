@@ -19,15 +19,13 @@ class CanvasImage extends React.Component {
     image.onload = () => {
       this.setState({
         image: image
-      });
+      }, () => {console.log("Image", image) });
     };
   }
 
   render() {
     return (
       <Image
-        width={400}
-        height={600}
         image={this.state.image}
       />
     );
@@ -64,7 +62,7 @@ class MapImg extends Component {
 
   render() {
     return (
-      <Stage name="myCanvas" width={400} height={600}>
+      <Stage name="myCanvas" width={500} height={750}>
         <Layer>
           <CanvasImage i={this.props.festival.map_img}>
           </CanvasImage>
@@ -76,6 +74,8 @@ class MapImg extends Component {
               key={`areapoint-${a.id}`}
               text={a.name}
               value={a.id}
+              padding={0}
+              margin={0}
               fill={Konva.Util.getRandomColor()}
               x={a.x ? a.x : 100}
               y={a.y ? a.y : 100}
