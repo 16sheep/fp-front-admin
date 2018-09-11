@@ -12,8 +12,8 @@ class Edit extends React.Component {
     location: "",
     logo_img: "",
     map_img: "",
-    date_from: "",
-    date_until: ""
+    from: "",
+    until: ""
   }
 
   handleChange = (e) => {
@@ -29,16 +29,15 @@ class Edit extends React.Component {
   }
 
   componentDidMount () {
-    let from = this.currentFestival().date_from.split("T")
-    let until = this.currentFestival().date_until.split("T")
+
     this.setState({
       name: this.currentFestival().name,
       secret: this.currentFestival().secret,
       location: this.currentFestival().location,
       logo_img: this.currentFestival().logo_img,
       map_img: this.currentFestival().map_img,
-      date_from: this.currentFestival().from,
-      date_until: this.currentFestival().until
+      date_from: this.currentFestival().date_from.split("T")[0],
+      date_until: this.currentFestival().date_until.split("T")[0]
     })
   }
 
