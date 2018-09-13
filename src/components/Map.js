@@ -38,6 +38,7 @@ class Map extends React.Component {
       this.setState({
         name: area.name,
         description:area.description,
+        icon:area.icon,
         selectedArea: area
       })
     }

@@ -3,6 +3,8 @@ import { editEvent, deleteEvent, getAreas} from '../actions.js'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Button, Checkbox, Form, Container, Header, Dropdown } from 'semantic-ui-react'
+import moment from 'moment'
+
 
 
 class EditEvent extends React.Component {
@@ -41,7 +43,7 @@ class EditEvent extends React.Component {
     return event
   }
 
-  
+
 
   componentDidMount () {
     let from = this.currentEvent().start.split(" ")
@@ -55,7 +57,8 @@ class EditEvent extends React.Component {
       time_from: from[1],
       time_until: until[1],
       date_from: from[0],
-      date_until: until[0]
+      date_until: until[0],
+      time_zone: moment().format("Z")
     })
   }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Image, List, Button } from 'semantic-ui-react'
+import { Image, List, Button, Container } from 'semantic-ui-react'
 
 import { getFestivals} from '../actions.js'
 
@@ -13,7 +13,7 @@ class FestivalList extends React.Component {
 
   render() {
     return (
-        <div>
+        <Container>
           <h2>My Festivals</h2>
           <List animated verticalAlign="middle">
           {this.props.festivals.map((f) =>
@@ -24,7 +24,7 @@ class FestivalList extends React.Component {
               </List.Content>
             </List.Item>)}
           </List>
-        </div>
+        </Container>
      )
   }
 }

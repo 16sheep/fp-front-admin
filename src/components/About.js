@@ -7,10 +7,9 @@ const About = () => {
     <Container>
       <Header>Festival Planner</Header>
       <p>
-        Festival planner helps festival organisers manage the event schedule across different and shows festivalgoers updated eventlist and an
-        interactive map venues, delegates workshops and
-        talks and allows festival participants to
-        create and manage their own micro events within a festival
+        Festival planner helps festival organisers manage the event schedule across different venues.
+        It syncs with Fest phone app and allows festivalgoers to easily navigate the festival with
+        interactive map and event fitlers which helps them find their way around.
       </p>
     </Container>
   )

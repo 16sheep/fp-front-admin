@@ -2,7 +2,7 @@ import React from 'react'
 import { newEvent, getAreas} from '../actions.js'
 import { connect } from 'react-redux'
 import { Button, Checkbox, Form, Container, Header, Dropdown } from 'semantic-ui-react'
-
+import moment from 'moment'
 
 
 
@@ -16,7 +16,8 @@ class NewEvent extends React.Component {
     time_from: "",
     time_until: "",
     area_id: "",
-    event_manager: this.props.current_user.id
+    event_manager: this.props.current_user.id,
+    time_zone: moment().format("Z")
   }
 
   handleChange = (e) => {

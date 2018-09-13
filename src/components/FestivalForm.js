@@ -3,8 +3,6 @@ import { newFestival } from '../actions.js'
 import { connect } from 'react-redux'
 import { Button, Checkbox, Form, Container, Header } from 'semantic-ui-react'
 
-
-
 class FestivalForm extends React.Component {
   state = {
     name: "",
@@ -25,7 +23,7 @@ class FestivalForm extends React.Component {
   render() {
     return(
       <Container>
-      <Header>Update festival details</Header>
+      <Header>Create new festival</Header>
       <Form onSubmit={(e, state)=>this.props.newFestival(e, this.state, this.props.current_user)}>
       <Form.Field>
         <label>Name</label>
