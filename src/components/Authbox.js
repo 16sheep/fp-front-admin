@@ -1,13 +1,14 @@
 import React from 'react'
 import { Route, Switch, Redirect} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { Button, Form, Container, Header} from 'semantic-ui-react'
+import { Button, Form, Container, Header, Segment} from 'semantic-ui-react'
 import SignUp from '../auth/SignUp'
 import Login from '../auth/Login'
 
 
 const Authbox = () => {
   return (
+    <Segment>
     <Container>
       <div>
         <Button.Group attached="top">
@@ -25,6 +26,8 @@ const Authbox = () => {
         </Switch>
       </div>
     </Container>
+    </Segment>
+
   )
 }
 

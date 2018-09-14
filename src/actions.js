@@ -48,6 +48,7 @@ export function newFestival(dispatch, body) {
 }
 
 export function editFestival(dispatch, body) {
+  alert("Updated")
   updateFestival(body)
   .then(data =>  {dispatch({type:"UPDATE_FESTIVAL", payload: data})
   })

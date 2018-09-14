@@ -1,9 +1,10 @@
 import React from 'react'
-import {Container, Header} from 'semantic-ui-react'
+import {Container, Header, Segment} from 'semantic-ui-react'
 
 
 const About = () => {
   return (
+    <Segment>
     <Container>
       <Header>Festival Planner</Header>
       <p>
@@ -12,6 +13,7 @@ const About = () => {
         interactive map and event fitlers which helps them find their way around.
       </p>
     </Container>
+    </Segment>
   )
 }
 

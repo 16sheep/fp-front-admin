@@ -7,7 +7,7 @@ import Edit from './Edit'
 import EditEvent from './EditEvent'
 import { connect } from 'react-redux'
 
-import { Menu, Container, Header } from 'semantic-ui-react'
+import { Menu, Container, Header, Segment } from 'semantic-ui-react'
 
  class FestivalDetails extends React.Component {
   state = {}
@@ -24,6 +24,7 @@ import { Menu, Container, Header } from 'semantic-ui-react'
     const { activeItem } = this.state
 
     return (
+      <Segment>
       <Container>
       <Header>{
            `${this.currentFestival().name} | ${this.currentFestival().date_from.split("T")[0]} - ${this.currentFestival().date_until.split("T")[0]}`
@@ -70,6 +71,7 @@ import { Menu, Container, Header } from 'semantic-ui-react'
           <Route path="/festivals/:id/events/:eventId" component={EditEvent}/>
         </Switch>
       </Container>
+      </Segment>
     )
   }
 }
